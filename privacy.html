@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Gizlilik Politikası — DiaLogic</title>
+<title>Gizlilik Politikası — Tokum</title>
 <style>
   body { font-family: -apple-system, system-ui, Arial, sans-serif; max-width: 760px; margin: 0 auto; padding: 28px 20px 64px; color: #1a1d23; line-height: 1.6; }
   h1 { color: #1f2937; border-bottom: 2px solid #1f2937; padding-bottom: 8px; }
@@ -25,16 +25,16 @@
 
 <div class="backbar"><button type="button" class="backbtn" id="backBtn">← Geri</button></div>
 
-<h1>Gizlilik Politikası — DiaLogic</h1>
-<p class="muted">Yürürlük tarihi: <strong>23.09.2026</strong> · Sürüm 2.2</p>
+<h1>Gizlilik Politikası — Tokum</h1>
+<p class="muted">Yürürlük tarihi: <strong>06.11.2026</strong> · Sürüm 2.4</p>
 
 <div class="tldr">
-<strong>Özet:</strong> DiaLogic kayıtlarınızı (öğün günlüğü, favoriler, hedefler, profil) <strong>yalnızca kendi cihazınızda</strong> saklar. Bu verileri sunucularımıza göndermeyiz, görmeyiz, depolamayız. Hesap açmanız gerekmez. Yalnızca isteğe bağlı çevrimiçi özellikler (internet besin araması, barkod sorgusu, AI öğün analizi) sınırlı veriyi ilgili servise gönderir; ayrıca abonelik durumunu doğrulamak için açılışta Google Play ve RevenueCat ile satın alma/cihaz bilgisi işlenir — hepsi aşağıda tek tek açıklanmıştır. <strong>Konum izni istemiyoruz; reklam ağı ve izleyici (tracker) kullanmıyoruz.</strong>
+<strong>Özet:</strong> Tokum kayıtlarınızı (öğün günlüğü, favoriler, hedefler, profil) <strong>yalnızca kendi cihazınızda</strong> saklar. Bu verileri sunucularımıza göndermeyiz, görmeyiz, depolamayız. Hesap açmanız gerekmez. Yalnızca isteğe bağlı çevrimiçi özellikler (internet besin araması, barkod sorgusu, AI öğün analizi) sınırlı veriyi ilgili servise gönderir; ayrıca abonelik durumunu doğrulamak için açılışta Google Play ve RevenueCat ile satın alma/cihaz bilgisi işlenir — hepsi aşağıda tek tek açıklanmıştır. Android'de isterseniz Health Connect'ten <strong>yalnızca günlük adım sayınızı</strong> okuruz; bu sayı saklanmaz ve cihazınızdan çıkmaz. <strong>Konum izni istemiyoruz; reklam ağı ve izleyici (tracker) kullanmıyoruz.</strong>
 </div>
 
 <h2>1. Kimiz?</h2>
-<p>DiaLogic, bağımsız bir geliştirici tarafından yayımlanan bir beslenme takip uygulamasıdır. Veri sorumlusu: <strong>Cüneyt Arabul</strong> · İletişim: <a href="mailto:cuneyt.arabul@gmail.com">cuneyt.arabul@gmail.com</a></p>
-<p>DiaLogic bir tıbbi cihaz değildir; hastalık teşhis, tedavi veya önleme amacı taşımaz.</p>
+<p>Tokum, bağımsız bir geliştirici tarafından yayımlanan bir beslenme takip uygulamasıdır. Veri sorumlusu: <strong>Cüneyt Arabul</strong> · İletişim: <a href="mailto:cuneyt.arabul@gmail.com">cuneyt.arabul@gmail.com</a></p>
+<p>Tokum bir tıbbi cihaz değildir; hastalık teşhis, tedavi veya önleme amacı taşımaz.</p>
 
 <h2>2. Hangi verileri işliyoruz ve nerede saklanıyor?</h2>
 <table>
@@ -43,6 +43,9 @@
   <tr><td>Profil (ad, dil, günlük hedefler, tema, bildirim tercihleri)</td><td>Cihaz</td><td><strong>Hayır</strong></td></tr>
   <tr><td>Favori besinler / favori öğünler</td><td>Cihaz</td><td><strong>Hayır</strong></td></tr>
   <tr><td>Kendi besinleriniz (etiketten girdikleriniz), tarifleriniz ve son kullandığınız kalemler</td><td>Cihaz</td><td><strong>Hayır</strong></td></tr>
+  <tr><td>Tartı kayıtlarınız, su kaydınız ve aralıklı oruç zamanlayıcısı (isteğe bağlı)</td><td>Cihaz (<code>kilo:YYYY-AA-GG</code>, <code>su:YYYY-AA-GG</code>, <code>oruc</code>)</td><td><strong>Hayır</strong></td></tr>
+  <tr><td>Tahmini kalori hesabı için girdiğiniz beden bilgisi (cinsiyet, doğum yılı, boy, aktivite düzeyi — isteğe bağlı) ve hedef kilonuz</td><td>Cihaz (profil)</td><td><strong>Hayır</strong></td></tr>
+  <tr><td>Günlük adım sayınız (yalnızca Android'de ve izin verirseniz — bkz. 3.2)</td><td>Hiçbir yerde saklanmaz; ekranda gösterilir</td><td><strong>Hayır</strong></td></tr>
   <tr><td>Kullanım sayaçları (AI, barkod ve internet araması kotası)</td><td>Cihaz</td><td><strong>Hayır</strong></td></tr>
   <tr><td>Yedek dosyası (.html)</td><td>Sizin seçtiğiniz yer (Drive, e-posta…)</td><td>Yalnızca <strong>siz</strong> gönderirsiniz; biz erişemeyiz</td></tr>
 </table>
@@ -61,8 +64,17 @@
 <h2>3.1 Abonelik ve satın almalar (Pro)</h2>
 <p>Pro aboneliği Google Play üzerinden satılır. Abonelik durumunu doğrulamak için RevenueCat SDK'sı kullanılır; bu SDK anonim bir kullanıcı kimliği, satın alma geçmişi ve temel cihaz/uygulama bilgisini işler. Ödeme bilgileriniz (kart vb.) bize <strong>hiçbir zaman</strong> ulaşmaz; ödemeyi Google Play yürütür.</p>
 
+<h2 id="adim">3.2 Adım sayısı (Health Connect · yalnızca Android)</h2>
+<p>İsterseniz Tokum, Android'in <strong>Health Connect</strong> hizmetinden <strong>yalnızca günlük adım sayınızı</strong> okur (izin: <code>android.permission.health.READ_STEPS</code>). Başka hiçbir Health Connect verisini okumaz ve Health Connect'e hiçbir veri yazmaz.</p>
+<ul>
+  <li><strong>Neden:</strong> Bugün ekranında o günün adım sayısını göstermek için. Sayı her bakışta Health Connect'ten yeniden okunur.</li>
+  <li><strong>Saklama:</strong> Adım sayısı uygulamada saklanmaz, yedek dosyasına girmez, hiçbir sunucuya gönderilmez; cihazınızdan çıkmaz.</li>
+  <li><strong>Paylaşım:</strong> Adım verisi kimseyle paylaşılmaz, satılmaz, reklam ya da kredi değerlendirmesi gibi amaçlarla kullanılmaz; Health Connect'ten alınan veriler, sınırlı kullanım şartları dahil Health Connect izin politikasına uygun olarak yalnızca bu amaçla kullanılır.</li>
+  <li><strong>Kontrol:</strong> İzni istediğiniz an Health Connect ayarlarından ya da uygulamada <em>Profil → Günlük Hedefler → Adım → Bağlantıyı kes</em> ile kaldırabilirsiniz.</li>
+</ul>
+
 <h2>4. Konum</h2>
-<p>DiaLogic <strong>konum izni istemez ve konum verisi işlemez.</strong> (Önceki sürümlerde bulunan hava durumu özelliği kaldırılmıştır.)</p>
+<p>Tokum <strong>konum izni istemez ve konum verisi işlemez.</strong> (Önceki sürümlerde bulunan hava durumu özelliği kaldırılmıştır.)</p>
 
 <h2>5. Çocukların gizliliği</h2>
 <p>Uygulama 18 yaş ve üzeri kullanıcılar içindir; 18 yaş altındaki kullanıcılar ebeveyn/yasal vasi gözetiminde kullanmalıdır. Bilerek çocuklardan veri toplamayız.</p>
@@ -70,7 +82,7 @@
 <h2>6. Veri saklama, yedekleme ve silme</h2>
 <ul>
   <li>Verileriniz siz silene kadar cihazınızda kalır. Uygulamayı kaldırmak veya telefonu sıfırlamak verileri siler.</li>
-  <li>Uygulama içinden <em>Profil → Tüm Verileri Sıfırla</em> ile tamamını kalıcı olarak silebilirsiniz.</li>
+  <li>Uygulama içinden <em>Profil → Tüm Verileri Sıfırla</em> ile tamamını (tartı, su ve oruç kayıtları dahil) kalıcı olarak silebilirsiniz.</li>
   <li>Yedek alırsanız dosya sizin seçtiğiniz konuma gider; o kopyanın saklanması ve silinmesi sizin kontrolünüzdedir.</li>
   <li>Önceki sürümden kalan kayıtlar bu sürümde okunmaz ve ilk açılışta cihazdan silinir.</li>
 </ul>
@@ -94,18 +106,18 @@
      bu bloğu yanlış kaynak dille işler. -->
 <section lang="en">
 
-<h1>Privacy Policy — DiaLogic (English)</h1>
-<p class="muted">Effective date: <strong>23 September 2026</strong> · Version 2.2</p>
+<h1>Privacy Policy — Tokum (English)</h1>
+<p class="muted">Effective date: <strong>6 November 2026</strong> · Version 2.4</p>
 
 <div class="tldr">
-<strong>Summary:</strong> DiaLogic stores your records (meal diary, favorites, goals, profile) <strong>only on your own device</strong>. We never send, see or store them on our servers. No account is needed. Only optional online features (online food search, barcode lookup, AI meal analysis) send limited data to the related service, and subscription status is verified with Google Play and RevenueCat. <strong>We do not ask for location permission and we use no ad networks or trackers.</strong>
+<strong>Summary:</strong> Tokum stores your records (meal diary, favorites, goals, profile) <strong>only on your own device</strong>. We never send, see or store them on our servers. No account is needed. Only optional online features (online food search, barcode lookup, AI meal analysis) send limited data to the related service, and subscription status is verified with Google Play and RevenueCat. On Android, if you choose, we read <strong>only your daily step count</strong> from Health Connect; it is not stored and never leaves your device. <strong>We do not ask for location permission and we use no ad networks or trackers.</strong>
 </div>
 
 <h2>1. Who we are</h2>
-<p>DiaLogic is a nutrition tracking app published by an independent developer. Data controller: <strong>Cüneyt Arabul</strong> · Contact: <a href="mailto:cuneyt.arabul@gmail.com">cuneyt.arabul@gmail.com</a>. DiaLogic is not a medical device and does not diagnose, treat, cure or prevent any medical condition.</p>
+<p>Tokum is a nutrition tracking app published by an independent developer. Data controller: <strong>Cüneyt Arabul</strong> · Contact: <a href="mailto:cuneyt.arabul@gmail.com">cuneyt.arabul@gmail.com</a>. Tokum is not a medical device and does not diagnose, treat, cure or prevent any medical condition.</p>
 
 <h2>2. What data we process and where it is stored</h2>
-<p>Meal diary, profile (name, language, daily goals, theme, reminder preferences), favorites, your own foods and recipes, recently used items and usage counters (AI, barcode and online-search quota) are stored <strong>only in your device's local storage</strong>. They are never sent to our servers. Backups you create go to the destination <strong>you</strong> choose (Drive, email…), which we cannot access.</p>
+<p>Meal diary, profile (name, language, daily goals, theme, reminder preferences), favorites, your own foods and recipes, recently used items, usage counters (AI, barcode and online-search quota), your optional weigh-ins, water log and intermittent fasting timer, and the optional body details you enter for the calorie estimate (sex, year of birth, height, activity level) and your goal weight are stored <strong>only in your device's local storage</strong>. They are never sent to our servers. Backups you create go to the destination <strong>you</strong> choose (Drive, email…), which we cannot access.</p>
 
 <h2>3. Third-party services (only if you use the related feature)</h2>
 <ul>
@@ -117,8 +129,17 @@
 <h2>3.1 Subscriptions &amp; purchases (Pro)</h2>
 <p>Pro is sold through Google Play. RevenueCat's SDK verifies subscription status and processes an anonymous user ID, purchase history and basic device/app information. Your payment details never reach us; Google Play handles payment.</p>
 
+<h2 id="steps">3.2 Step count (Health Connect · Android only)</h2>
+<p>If you choose, Tokum reads <strong>only your daily step count</strong> from Android's <strong>Health Connect</strong> (permission: <code>android.permission.health.READ_STEPS</code>). It reads no other Health Connect data and writes nothing to Health Connect.</p>
+<ul>
+  <li><strong>Why:</strong> to show today's step count on the Today screen. The number is read again from Health Connect each time it is shown.</li>
+  <li><strong>Storage:</strong> the step count is not stored in the app, not included in backups and not sent to any server; it never leaves your device.</li>
+  <li><strong>Sharing:</strong> step data is not shared with anyone, not sold and not used for advertising, credit or similar purposes; data from Health Connect is used only for this purpose, in line with the Health Connect permissions policy, including its Limited Use requirements.</li>
+  <li><strong>Control:</strong> you can remove the permission at any time in Health Connect settings or in the app under <em>Profile → Daily Goals → Steps → Disconnect</em>.</li>
+</ul>
+
 <h2>4. Location</h2>
-<p>DiaLogic <strong>does not request location permission and does not process location data.</strong> (The weather feature present in earlier versions has been removed.)</p>
+<p>Tokum <strong>does not request location permission and does not process location data.</strong> (The weather feature present in earlier versions has been removed.)</p>
 
 <h2>5. Children's privacy</h2>
 <p>The app is intended for users aged 18+; younger users should use it under the supervision of a parent or legal guardian. We do not knowingly collect data from children.</p>
@@ -126,7 +147,7 @@
 <h2>6. Retention, backup and deletion</h2>
 <ul>
   <li>Your data stays on your device until you delete it. Uninstalling the app or resetting the phone deletes it.</li>
-  <li>You can permanently erase everything from inside the app via <em>Profile → Reset All Data</em>.</li>
+  <li>You can permanently erase everything (including weigh-ins, water and fasting records) from inside the app via <em>Profile → Reset All Data</em>.</li>
   <li>If you create a backup, the file goes to the destination you choose; storing and deleting that copy is under your control.</li>
   <li>Records left from previous versions are not read by this version and are deleted from the device on first launch.</li>
 </ul>
