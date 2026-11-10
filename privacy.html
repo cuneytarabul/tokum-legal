@@ -26,7 +26,7 @@
 <div class="backbar"><button type="button" class="backbtn" id="backBtn">← Geri</button></div>
 
 <h1>Gizlilik Politikası — Tokum</h1>
-<p class="muted">Yürürlük tarihi: <strong>06.11.2026</strong> · Sürüm 2.4</p>
+<p class="muted">Yürürlük tarihi: <strong>09.11.2026</strong> · Sürüm 2.5</p>
 
 <div class="tldr">
 <strong>Özet:</strong> Tokum kayıtlarınızı (öğün günlüğü, favoriler, hedefler, profil) <strong>yalnızca kendi cihazınızda</strong> saklar. Bu verileri sunucularımıza göndermeyiz, görmeyiz, depolamayız. Hesap açmanız gerekmez. Yalnızca isteğe bağlı çevrimiçi özellikler (internet besin araması, barkod sorgusu, AI öğün analizi) sınırlı veriyi ilgili servise gönderir; ayrıca abonelik durumunu doğrulamak için açılışta Google Play ve RevenueCat ile satın alma/cihaz bilgisi işlenir — hepsi aşağıda tek tek açıklanmıştır. Android'de isterseniz Health Connect'ten <strong>yalnızca günlük adım sayınızı</strong> okuruz; bu sayı saklanmaz ve cihazınızdan çıkmaz. <strong>Konum izni istemiyoruz; reklam ağı ve izleyici (tracker) kullanmıyoruz.</strong>
@@ -77,7 +77,7 @@
 <p>Tokum <strong>konum izni istemez ve konum verisi işlemez.</strong> (Önceki sürümlerde bulunan hava durumu özelliği kaldırılmıştır.)</p>
 
 <h2>5. Çocukların gizliliği</h2>
-<p>Uygulama 18 yaş ve üzeri kullanıcılar içindir; 18 yaş altındaki kullanıcılar ebeveyn/yasal vasi gözetiminde kullanmalıdır. Bilerek çocuklardan veri toplamayız.</p>
+<p>Uygulama yalnızca 18 yaş ve üzeri kullanıcılar içindir. Bilerek 18 yaşından küçük kişilerden veri toplamayız.</p>
 
 <h2>6. Veri saklama, yedekleme ve silme</h2>
 <ul>
@@ -107,7 +107,7 @@
 <section lang="en">
 
 <h1>Privacy Policy — Tokum (English)</h1>
-<p class="muted">Effective date: <strong>6 November 2026</strong> · Version 2.4</p>
+<p class="muted">Effective date: <strong>9 November 2026</strong> · Version 2.5</p>
 
 <div class="tldr">
 <strong>Summary:</strong> Tokum stores your records (meal diary, favorites, goals, profile) <strong>only on your own device</strong>. We never send, see or store them on our servers. No account is needed. Only optional online features (online food search, barcode lookup, AI meal analysis) send limited data to the related service, and subscription status is verified with Google Play and RevenueCat. On Android, if you choose, we read <strong>only your daily step count</strong> from Health Connect; it is not stored and never leaves your device. <strong>We do not ask for location permission and we use no ad networks or trackers.</strong>
@@ -142,7 +142,7 @@
 <p>Tokum <strong>does not request location permission and does not process location data.</strong> (The weather feature present in earlier versions has been removed.)</p>
 
 <h2>5. Children's privacy</h2>
-<p>The app is intended for users aged 18+; younger users should use it under the supervision of a parent or legal guardian. We do not knowingly collect data from children.</p>
+<p>The app is intended only for users aged 18 and over. We do not knowingly collect data from anyone under 18.</p>
 
 <h2>6. Retention, backup and deletion</h2>
 <ul>
@@ -170,6 +170,8 @@
   document.getElementById("backBtn").addEventListener("click", function () {
     if (document.referrer) history.back(); else window.location.href = "/";
   });
+  // Uygulamanın içinde açılınca Android'in donanım GERİ tuşu da geri götürsün (MainActivity → window.__tokumBack; yoksa uygulama arka plana alınırdı)
+  window.__tokumBack = function () { if (document.referrer) history.back(); else window.location.href = "/"; return true; };
 </script>
 </body>
 </html>
